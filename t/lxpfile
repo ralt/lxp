@@ -1,0 +1,8 @@
+(define-project muzeo
+  :main (:base "lap" ;; lamp without the m
+         :links (:db :mysql)
+         :mounts ((:local "." :remote "/app")
+                  (:local "~/.ssh" :remote "/root/.ssh")))
+  :mysql (:base "mysql"
+          :env ((:name "MYSQL_ROOT_PASSWORD" :value "root")
+                (:name "MYSQL_PASSWORD" :value "password"))))
