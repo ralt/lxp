@@ -1,7 +1,7 @@
 (in-package :lxp)
 
 (defun start-container (project name values)
-  (run (format nil "lxc-start --name ~A" (container-name project name))))
+  (run (format nil "lxc-start --name ~A --daemon" (container-name project name))))
 
 (defun container-p (project name)
   (if (eq nil
