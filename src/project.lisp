@@ -5,6 +5,7 @@
           (containers ',forms))
      (loop
         for (name values) on containers by #'cddr
+        do (setf name (string-downcase name))
         do (if (container-p project name)
                (start-container project name values)
                (progn
